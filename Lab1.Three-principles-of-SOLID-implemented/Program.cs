@@ -18,7 +18,7 @@ internal class Program
         {
             case 'S':
                 // Single Responsibility Principle demo
-                var items = new System.Collections.Generic.List<Item>
+                var items = new List<Item>
                 {
                     new Item("Pen", 1.20m, 3),
                     new Item("Notebook", 2.50m, 2)
@@ -31,7 +31,7 @@ internal class Program
 
             case 'O':
                 // Open/Closed Principle demo
-                var shapes = new System.Collections.Generic.List<IShape>
+                var shapes = new List<IShape>
                 {
                     new Rectangle(3, 4),
                     new Circle(2)

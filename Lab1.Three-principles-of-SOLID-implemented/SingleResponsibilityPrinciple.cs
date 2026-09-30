@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Collections.ObjectModel;
+
 
 namespace Lab1.Three_principles_of_SOLID_implemented;
 
@@ -13,7 +14,7 @@ public class Invoice
     private readonly List<Item> _items;
 
     // Expose a read-only view to prevent external modification of the internal list
-    public System.Collections.ObjectModel.ReadOnlyCollection<Item> Items => _items.AsReadOnly();
+    public ReadOnlyCollection<Item> Items => _items.AsReadOnly();
 
     public Invoice(IEnumerable<Item> items)
     {
