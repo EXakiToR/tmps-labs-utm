@@ -53,6 +53,5 @@ internal class Program
         }
 
         Console.WriteLine("Demo complete. Press any key to exit...");
-        Console.ReadKey();
     }
 }
