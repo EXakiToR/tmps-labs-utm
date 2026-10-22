@@ -32,7 +32,7 @@ public class ProductBuilder
 
     public Product Build()
     {
-        // Return a shallow copy to prevent further modification via builder
+        // Return an independent copy so the builder can be reused safely
         var copy = new Product { Name = _product.Name };
         copy.Parts.AddRange(_product.Parts);
         return copy;
