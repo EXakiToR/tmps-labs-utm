@@ -1,4 +1,4 @@
-# Creational Design Patterns implemented
+# Three creational design patterns implemented
 
 This demo project demonstrates three creational design patterns: Singleton, Builder, and Factory.
 
