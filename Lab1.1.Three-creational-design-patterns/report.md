@@ -4,7 +4,7 @@ This demo project demonstrates three creational design patterns: Singleton, Buil
 
 ## 1) Singleton
 - File: Patterns/Singleton.cs
-- Implementation: Thread-safe lazy singleton with double-checked locking.
+- Implementation: Thread-safe singleton with double-checked locking.
 - Purpose: Provide a globally accessible single instance with simple state (Counter).
 - Usage: Singleton.Instance.Increment(); Singleton.Instance.GetInfo();
 
