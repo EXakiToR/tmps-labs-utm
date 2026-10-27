@@ -1,6 +1,6 @@
 # Three creational design patterns implemented
 
-This demo project demonstrates three creational design patterns: Singleton, Builder, and Factory.
+This demo illustrates three creational design patterns: Singleton, Builder, and Factory.
 
 ## 1) Singleton
 - File: Patterns/Singleton.cs
