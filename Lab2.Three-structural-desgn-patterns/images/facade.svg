@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+<title>Facade | One quest operation coordinates three subsystems</title>
+<defs>
+<marker id="triangle" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L15,8 L1,15 Z" fill="white" stroke="#334155"/></marker>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#334155"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text {font-family:Consolas,monospace;font-size:14px;fill:#0f172a} .title {font-family:Segoe UI,sans-serif;font-size:24px;font-weight:700} .label {font-family:Segoe UI,sans-serif;font-size:14px;fill:#475569}</style>
+<text x="28" y="38" class="title">Facade | One quest operation coordinates three subsystems</text>
+<rect x="30" y="110" width="300" height="116" fill="white" stroke="#334155"/>
+<rect x="30" y="110" width="300" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="42" y="131" class="">«Client»</text>
+<text x="42" y="157" class="">Program</text>
+<path d="M30,188 H330" stroke="#334155"/>
+<text x="42" y="212" class="">+ Main(args): int</text>
+<rect x="620" y="95" width="600" height="202" fill="white" stroke="#334155"/>
+<rect x="620" y="95" width="600" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="632" y="116" class="">«Facade»</text>
+<text x="632" y="142" class="">ExpeditionFacade</text>
+<text x="632" y="179" class="">- _equipment: EquipmentRack</text>
+<text x="632" y="202" class="">- _arena: BattleArena</text>
+<text x="632" y="225" class="">- _wallet: GoldWallet</text>
+<path d="M620,236 H1220" stroke="#334155"/>
+<text x="632" y="260" class="">+ ExpeditionFacade(equipment, arena, wallet)</text>
+<text x="632" y="283" class="">+ CompleteQuest(weapon): QuestResult</text>
+<rect x="30" y="490" width="370" height="133" fill="white" stroke="#334155"/>
+<rect x="30" y="490" width="370" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="42" y="511" class="">«Subsystem»</text>
+<text x="42" y="537" class="">EquipmentRack</text>
+<text x="42" y="574" class="">+ EquippedWeapon: IWeapon? {get}</text>
+<path d="M30,585 H400" stroke="#334155"/>
+<text x="42" y="609" class="">+ Equip(weapon): void</text>
+<rect x="455" y="490" width="370" height="116" fill="white" stroke="#334155"/>
+<rect x="455" y="490" width="370" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="467" y="511" class="">«Subsystem»</text>
+<text x="467" y="537" class="">BattleArena</text>
+<path d="M455,568 H825" stroke="#334155"/>
+<text x="467" y="592" class="">+ Fight(weapon): BattleResult</text>
+<rect x="880" y="490" width="340" height="133" fill="white" stroke="#334155"/>
+<rect x="880" y="490" width="340" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="892" y="511" class="">«Subsystem»</text>
+<text x="892" y="537" class="">GoldWallet</text>
+<text x="892" y="574" class="">+ Balance: int {get}</text>
+<path d="M880,585 H1220" stroke="#334155"/>
+<text x="892" y="609" class="">+ Deposit(amount): void</text>
+<path d="M330,180 H620" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="370" y="162" class="label">CompleteQuest()</text>
+<path d="M720,297 V400 H215 V490" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M920,297 V430 H640 V490" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M1100,297 V490" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="245" y="388" class="label">1. Equip</text>
+<text x="665" y="418" class="label">2. Fight</text>
+<text x="1115" y="405" class="label">3. Reward</text>
+<text x="30" y="711" class="label">The facade holds one instance of each subsystem. Rewards are deposited only after victory.</text>
+<text x="30" y="742" class="label">BattleResult and QuestResult are immutable result records; supporting signatures are simplified.</text>
+<text x="30" y="773" class="label">Solid arrow: association. Dashed arrow: dependency. + public; - private.</text>
+</svg>
