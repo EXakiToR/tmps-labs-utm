@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="850" viewBox="0 0 1260 850">
+<title>Factory Method | Locations choose enemy products</title>
+<defs>
+<marker id="triangle" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L15,8 L1,15 Z" fill="white" stroke="#334155"/></marker>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#334155"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text {font-family:Consolas,monospace;font-size:14px;fill:#0f172a} .title {font-family:Segoe UI,sans-serif;font-size:24px;font-weight:700} .label {font-family:Segoe UI,sans-serif;font-size:14px;fill:#475569}</style>
+<text x="28" y="38" class="title">Factory Method | Locations choose enemy products</text>
+<rect x="30" y="100" width="490" height="139" fill="white" stroke="#334155"/>
+<rect x="30" y="100" width="490" height="60" fill="#dbeafe" stroke="#334155"/>
+<text x="42" y="121" class="">«abstract / Creator»</text>
+<text x="42" y="147" class="">Encounter</text>
+<path d="M30,178 H520" stroke="#334155"/>
+<text x="42" y="202" class="">+ CreateEnemy(): IEnemy {abstract}</text>
+<text x="42" y="225" class="">+ Play(hero: Hero): BattleResult</text>
+<rect x="800" y="100" width="410" height="179" fill="white" stroke="#334155"/>
+<rect x="800" y="100" width="410" height="60" fill="#dbeafe" stroke="#334155"/>
+<text x="812" y="121" class="">«interface / Product»</text>
+<text x="812" y="147" class="">IEnemy</text>
+<text x="812" y="184" class="">+ Name: string {get}</text>
+<text x="812" y="207" class="">+ Health: int {get}</text>
+<text x="812" y="230" class="">+ Attack: int {get}</text>
+<text x="812" y="253" class="">+ Reward: int {get}</text>
+<path d="M800,264 H1210" stroke="#334155"/>
+<rect x="30" y="435" width="490" height="116" fill="white" stroke="#334155"/>
+<rect x="30" y="435" width="490" height="60" fill="#dbeafe" stroke="#334155"/>
+<text x="42" y="456" class="">«Concrete creator»</text>
+<text x="42" y="482" class="">ForestEncounter</text>
+<path d="M30,513 H520" stroke="#334155"/>
+<text x="42" y="537" class="">+ CreateEnemy(): IEnemy</text>
+<rect x="30" y="640" width="490" height="116" fill="white" stroke="#334155"/>
+<rect x="30" y="640" width="490" height="60" fill="#dbeafe" stroke="#334155"/>
+<text x="42" y="661" class="">«Concrete creator»</text>
+<text x="42" y="687" class="">MountainEncounter</text>
+<path d="M30,718 H520" stroke="#334155"/>
+<text x="42" y="742" class="">+ CreateEnemy(): IEnemy</text>
+<rect x="800" y="435" width="410" height="133" fill="white" stroke="#334155"/>
+<rect x="800" y="435" width="410" height="60" fill="#dbeafe" stroke="#334155"/>
+<text x="812" y="456" class="">«Concrete product»</text>
+<text x="812" y="482" class="">Goblin</text>
+<text x="812" y="519" class="">+ Name = &quot;Goblin&quot;</text>
+<text x="812" y="542" class="">+ Health = 40; Attack = 8; Reward = 10</text>
+<path d="M800,553 H1210" stroke="#334155"/>
+<rect x="800" y="640" width="410" height="133" fill="white" stroke="#334155"/>
+<rect x="800" y="640" width="410" height="60" fill="#dbeafe" stroke="#334155"/>
+<text x="812" y="661" class="">«Concrete product»</text>
+<text x="812" y="687" class="">Dragon</text>
+<text x="812" y="724" class="">+ Name = &quot;Dragon&quot;</text>
+<text x="812" y="747" class="">+ Health = 90; Attack = 20; Reward = 50</text>
+<path d="M800,758 H1210" stroke="#334155"/>
+<path d="M520,170 H800" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="600" y="156" class="label">uses / returns</text>
+<path d="M180,435 V239" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#triangle)"/>
+<path d="M30,685 H15 V310 H100 V239" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#triangle)"/>
+<path d="M940,435 V279" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#triangle)"/>
+<path d="M1210,685 H1240 V330 H1080 V279" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#triangle)"/>
+<path d="M520,495 H800" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="610" y="482" class="label">creates</text>
+<path d="M520,700 H800" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="610" y="687" class="label">creates</text>
+<text x="30" y="802" class="label">Solid hollow triangle: inheritance. Dashed hollow triangle: interface realization.</text>
+<text x="30" y="827" class="label">Dashed open arrow: dependency. Play invokes CreateEnemy through polymorphism.</text>
+</svg>

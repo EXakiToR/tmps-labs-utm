@@ -1,38 +1,22 @@
 namespace Lab1._1.Three_creational_design_patterns.Patterns;
 
-public sealed class Singleton
+public sealed class GameJournal
 {
-    private static readonly object _lock = new();
-    private static Singleton? _instance;
+    private static readonly Lazy<GameJournal> _instance = new(() => new GameJournal());
+    private readonly List<string> _entries = [];
+    private readonly object _gate = new();
 
-    // Example state
-    public int Counter { get; private set; }
+    private GameJournal() { }
+    public static GameJournal Instance => _instance.Value;
 
-    private Singleton()
+    public void Record(string entry)
     {
-        Counter = 0;
+        ArgumentException.ThrowIfNullOrWhiteSpace(entry);
+        lock (_gate) _entries.Add(entry);
     }
 
-    public static Singleton Instance
+    public IReadOnlyList<string> GetEntries()
     {
-        get
-        {
-            if (_instance == null)
-            {
-                lock (_lock)
-                {
-                    if (_instance == null)
-                        _instance = new Singleton();
-                }
-            }
-            return _instance!;
-        }
+        lock (_gate) return Array.AsReadOnly(_entries.ToArray());
     }
-
-    public void Increment()
-    {
-        Counter++;
-    }
-
-    public string GetInfo() => $"Singleton Counter={Counter}";
 }
