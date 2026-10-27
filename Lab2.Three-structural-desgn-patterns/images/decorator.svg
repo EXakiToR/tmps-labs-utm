@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+<title>Decorator | Stack enchantments through the same interface</title>
+<defs>
+<marker id="triangle" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L15,8 L1,15 Z" fill="white" stroke="#334155"/></marker>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#334155"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text {font-family:Consolas,monospace;font-size:14px;fill:#0f172a} .title {font-family:Segoe UI,sans-serif;font-size:24px;font-weight:700} .label {font-family:Segoe UI,sans-serif;font-size:14px;fill:#475569}</style>
+<text x="28" y="38" class="title">Decorator | Stack enchantments through the same interface</text>
+<rect x="420" y="95" width="360" height="133" fill="white" stroke="#334155"/>
+<rect x="420" y="95" width="360" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="432" y="116" class="">«interface / Component»</text>
+<text x="432" y="142" class="">IWeapon</text>
+<text x="432" y="179" class="">+ Name: string {get}</text>
+<text x="432" y="202" class="">+ Damage: int {get}</text>
+<path d="M420,213 H780" stroke="#334155"/>
+<rect x="30" y="355" width="380" height="133" fill="white" stroke="#334155"/>
+<rect x="30" y="355" width="380" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="42" y="376" class="">«Concrete component»</text>
+<text x="42" y="402" class="">Sword</text>
+<text x="42" y="439" class="">+ Name: string {get}</text>
+<text x="42" y="462" class="">+ Damage: int {get}</text>
+<path d="M30,473 H410" stroke="#334155"/>
+<rect x="700" y="355" width="450" height="179" fill="white" stroke="#334155"/>
+<rect x="700" y="355" width="450" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="712" y="376" class="">«abstract / Decorator»</text>
+<text x="712" y="402" class="">WeaponDecorator</text>
+<text x="712" y="439" class=""># Inner: IWeapon {get}</text>
+<text x="712" y="462" class="">+ Name: string {abstract, get}</text>
+<text x="712" y="485" class="">+ Damage: int {abstract, get}</text>
+<path d="M700,496 H1150" stroke="#334155"/>
+<text x="712" y="520" class=""># WeaponDecorator(inner)</text>
+<rect x="30" y="650" width="440" height="136" fill="white" stroke="#334155"/>
+<rect x="30" y="650" width="440" height="40" fill="#dcfce7" stroke="#334155"/>
+<text x="42" y="677" class="">FireEnchantment</text>
+<text x="42" y="714" class="">+ Name: string {override, get}</text>
+<text x="42" y="737" class="">+ Damage: int {override, get}</text>
+<path d="M30,748 H470" stroke="#334155"/>
+<text x="42" y="772" class="">+ FireEnchantment(inner)</text>
+<rect x="700" y="650" width="450" height="136" fill="white" stroke="#334155"/>
+<rect x="700" y="650" width="450" height="40" fill="#dcfce7" stroke="#334155"/>
+<text x="712" y="677" class="">PoisonEnchantment</text>
+<text x="712" y="714" class="">+ Name: string {override, get}</text>
+<text x="712" y="737" class="">+ Damage: int {override, get}</text>
+<path d="M700,748 H1150" stroke="#334155"/>
+<text x="712" y="772" class="">+ PoisonEnchantment(inner)</text>
+<path d="M220,355 V285 H490 V228" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#triangle)"/>
+<path d="M850,355 V285 H710 V228" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#triangle)"/>
+<path d="M1050,355 V175 H780" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="885" y="158" class="label">wraps exactly 1</text>
+<path d="M250,650 V600 H820 V534" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#triangle)"/>
+<path d="M925,650 V534" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#triangle)"/>
+<text x="30" y="820" class="label">Hollow triangles: realization (dashed) / inheritance (solid). # protected; + public.</text>
+</svg>

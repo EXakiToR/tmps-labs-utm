@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="700" viewBox="0 0 1160 700">
+<title>Adapter | Make the legacy wand usable as a weapon</title>
+<defs>
+<marker id="triangle" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L15,8 L1,15 Z" fill="white" stroke="#334155"/></marker>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#334155"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text {font-family:Consolas,monospace;font-size:14px;fill:#0f172a} .title {font-family:Segoe UI,sans-serif;font-size:24px;font-weight:700} .label {font-family:Segoe UI,sans-serif;font-size:14px;fill:#475569}</style>
+<text x="28" y="38" class="title">Adapter | Make the legacy wand usable as a weapon</text>
+<rect x="30" y="110" width="300" height="116" fill="white" stroke="#334155"/>
+<rect x="30" y="110" width="300" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="42" y="131" class="">«Client»</text>
+<text x="42" y="157" class="">BattleArena</text>
+<path d="M30,188 H330" stroke="#334155"/>
+<text x="42" y="212" class="">+ Fight(weapon): BattleResult</text>
+<rect x="710" y="110" width="400" height="133" fill="white" stroke="#334155"/>
+<rect x="710" y="110" width="400" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="722" y="131" class="">«interface / Target»</text>
+<text x="722" y="157" class="">IWeapon</text>
+<text x="722" y="194" class="">+ Name: string {get}</text>
+<text x="722" y="217" class="">+ Damage: int {get}</text>
+<path d="M710,228 H1110" stroke="#334155"/>
+<rect x="710" y="380" width="400" height="179" fill="white" stroke="#334155"/>
+<rect x="710" y="380" width="400" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="722" y="401" class="">«Adapter»</text>
+<text x="722" y="427" class="">WandAdapter</text>
+<text x="722" y="464" class="">- _wand: LegacyWand</text>
+<text x="722" y="487" class="">+ Name: string {get}</text>
+<text x="722" y="510" class="">+ Damage: int {get}</text>
+<path d="M710,521 H1110" stroke="#334155"/>
+<text x="722" y="545" class="">+ WandAdapter(wand)</text>
+<rect x="30" y="380" width="390" height="179" fill="white" stroke="#334155"/>
+<rect x="30" y="380" width="390" height="60" fill="#dcfce7" stroke="#334155"/>
+<text x="42" y="401" class="">«Adaptee»</text>
+<text x="42" y="427" class="">LegacyWand</text>
+<text x="42" y="464" class="">+ Model: string {get}</text>
+<text x="42" y="487" class="">- _powerLevel: int</text>
+<path d="M30,498 H420" stroke="#334155"/>
+<text x="42" y="522" class="">+ LegacyWand(model, powerLevel)</text>
+<text x="42" y="545" class="">+ CalculateMagicPower(): int</text>
+<path d="M330,170 H710" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="435" y="155" class="label">uses target interface</text>
+<path d="M910,380 V243" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#triangle)"/>
+<text x="930" y="320" class="label">implements</text>
+<path d="M710,475 H420" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="475" y="458" class="label">holds 1 / delegates</text>
+<text x="30" y="638" class="label">Name maps to Model; Damage maps to CalculateMagicPower(). LegacyWand is unchanged.</text>
+<text x="30" y="669" class="label">Dashed triangle: realization. Solid arrow: association. Dashed arrow: dependency.</text>
+</svg>
