@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="830" viewBox="0 0 1200 830">
+<title>Builder | Construct immutable heroes step by step</title>
+<defs>
+<marker id="triangle" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L15,8 L1,15 Z" fill="white" stroke="#334155"/></marker>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#334155"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text {font-family:Consolas,monospace;font-size:14px;fill:#0f172a} .title {font-family:Segoe UI,sans-serif;font-size:24px;font-weight:700} .label {font-family:Segoe UI,sans-serif;font-size:14px;fill:#475569}</style>
+<text x="28" y="38" class="title">Builder | Construct immutable heroes step by step</text>
+<rect x="30" y="100" width="430" height="119" fill="white" stroke="#334155"/>
+<rect x="30" y="100" width="430" height="40" fill="#dbeafe" stroke="#334155"/>
+<text x="42" y="127" class="">HeroDirector</text>
+<path d="M30,158 H460" stroke="#334155"/>
+<text x="42" y="182" class="">+ CreateKnight(builder): Hero {static}</text>
+<text x="42" y="205" class="">+ CreateRanger(builder): Hero {static}</text>
+<rect x="680" y="100" width="470" height="208" fill="white" stroke="#334155"/>
+<rect x="680" y="100" width="470" height="60" fill="#dbeafe" stroke="#334155"/>
+<text x="692" y="121" class="">«interface»</text>
+<text x="692" y="147" class="">IHeroBuilder</text>
+<path d="M680,178 H1150" stroke="#334155"/>
+<text x="692" y="202" class="">+ Named(name): IHeroBuilder</text>
+<text x="692" y="225" class="">+ WithHealth(health): IHeroBuilder</text>
+<text x="692" y="248" class="">+ WithAttack(attack): IHeroBuilder</text>
+<text x="692" y="271" class="">+ AddEquipment(item): IHeroBuilder</text>
+<text x="692" y="294" class="">+ Build(): Hero</text>
+<rect x="680" y="435" width="470" height="274" fill="white" stroke="#334155"/>
+<rect x="680" y="435" width="470" height="40" fill="#dbeafe" stroke="#334155"/>
+<text x="692" y="462" class="">HeroBuilder</text>
+<text x="692" y="499" class="">- _name: string</text>
+<text x="692" y="522" class="">- _health: int = 100</text>
+<text x="692" y="545" class="">- _attack: int = 10</text>
+<text x="692" y="568" class="">- _equipment: List&lt;string&gt;</text>
+<path d="M680,579 H1150" stroke="#334155"/>
+<text x="692" y="603" class="">+ Named(name): IHeroBuilder</text>
+<text x="692" y="626" class="">+ WithHealth(health): IHeroBuilder</text>
+<text x="692" y="649" class="">+ WithAttack(attack): IHeroBuilder</text>
+<text x="692" y="672" class="">+ AddEquipment(item): IHeroBuilder</text>
+<text x="692" y="695" class="">+ Build(): Hero</text>
+<rect x="30" y="470" width="430" height="182" fill="white" stroke="#334155"/>
+<rect x="30" y="470" width="430" height="40" fill="#dbeafe" stroke="#334155"/>
+<text x="42" y="497" class="">Hero</text>
+<text x="42" y="534" class="">+ Name: string {get}</text>
+<text x="42" y="557" class="">+ Health: int {get}</text>
+<text x="42" y="580" class="">+ Attack: int {get}</text>
+<text x="42" y="603" class="">+ Equipment: IReadOnlyList&lt;string&gt; {get}</text>
+<path d="M30,614 H460" stroke="#334155"/>
+<text x="42" y="638" class="">~ Hero(name, health, attack, equipment)</text>
+<path d="M460,155 H680" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="515" y="142" class="label">uses recipe</text>
+<path d="M915,435 V308" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#triangle)"/>
+<text x="930" y="390" class="label">implements</text>
+<path d="M680,575 H460" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="515" y="562" class="label">creates</text>
+<text x="30" y="778" class="label">Dashed hollow triangle: interface realization. Dashed open arrow: dependency.</text>
+<text x="30" y="805" class="label">+ public; - private; ~ internal. Hero copies equipment into a read-only collection.</text>
+</svg>
