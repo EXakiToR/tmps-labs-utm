@@ -21,9 +21,11 @@ internal static class DemoChecks
         }
         try
         {
+            IWeaponFactory weaponFactory = new WeaponFactory();
+            IWeapon wand = weaponFactory.CreateWand("Oak Wand", 3);
             var legacy = new LegacyWand("Oak Wand", 3);
-            IWeapon wand = new WandAdapter(legacy);
             Check(wand.Name == legacy.Model && wand.Damage == 18, "Adapter translates the legacy API");
+            Check(weaponFactory.CreateSword() is Sword, "Factory creates a native weapon");
             Throws<ArgumentNullException>(() => new WandAdapter(null!), "Adapter rejects a missing wand");
             Throws<ArgumentException>(() => new LegacyWand(" ", 1), "Legacy wand rejects blank model names");
             Throws<ArgumentOutOfRangeException>(() => new LegacyWand("Wand", 0), "Legacy wand rejects nonpositive power");

@@ -8,4 +8,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="StructuralPatterns.Tests\**" />
+    <None Remove="StructuralPatterns.Tests\**" />
+  </ItemGroup>
+
 </Project>

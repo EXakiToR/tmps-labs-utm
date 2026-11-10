@@ -1,3 +1,4 @@
-<Solution>
+﻿<Solution>
   <Project Path="Lab2.Three-structural-desgn-patterns.csproj" />
+  <Project Path="StructuralPatterns.Tests\StructuralPatterns.Tests.csproj" />
 </Solution>
