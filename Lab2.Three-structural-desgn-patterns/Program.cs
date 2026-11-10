@@ -12,8 +12,9 @@ internal static class Program
         }
 
         Console.WriteLine("=== Enchanted Expedition: Structural Patterns ===");
-        IWeapon sword = new Sword();
-        IWeapon wand = new WandAdapter(new LegacyWand("Oak Wand", 3));
+        IWeaponFactory weaponFactory = new WeaponFactory();
+        IWeapon sword = weaponFactory.CreateSword();
+        IWeapon wand = weaponFactory.CreateWand("Oak Wand", 3);
         Console.WriteLine("\n[Adapter] Use a legacy wand through IWeapon:");
         Console.WriteLine($"{wand.Name}: {wand.Damage} damage");
 
