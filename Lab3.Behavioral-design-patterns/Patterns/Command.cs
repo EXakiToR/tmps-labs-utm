@@ -3,7 +3,9 @@ namespace Lab3.Behavioral_design_patterns.Patterns;
 
 public interface ICommand
 {
+    // Commands expose an action through a common execution contract.
     void Execute();
+    // Reversible commands also expose restoration through the same contract.
     void Undo();
 }
 public sealed class AttackCommand(Hero attacker, Hero target) : ICommand
@@ -13,7 +15,7 @@ public sealed class AttackCommand(Hero attacker, Hero target) : ICommand
     public void Execute()
     {
         if (executed) throw new InvalidOperationException("Undo before executing again.");
-        // Capture receiver state before delegating the attack to the domain object.
+        // Save target health for Undo, then let the hero perform the attack.
         previousHealth = target.Health;
         attacker.Attack(target);
         executed = true;
@@ -32,7 +34,7 @@ public sealed class CommandHistory
     public void Execute(ICommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
-        // Only successfully executed commands enter the undo history.
+        // Execute through ICommand, then retain the successful action for later undo.
         command.Execute();
         commands.Push(command);
     }
